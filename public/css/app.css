@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Figtree", sans-serif;
+    background: linear-gradient(45deg, #7c9885, #b5b682);
+  }
+
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header partagé */
+  .main-header {
+    background: #28666e;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .main-header nav {
+    margin-top: 1rem;
+  }
+
+  .main-header a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+
+  /* Footer partagé */
+  footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Réutilisez vos articles existants */
+  @import "style.css"; /* Votre CSS actuel */

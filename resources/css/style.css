@@ -1,0 +1,93 @@
+/* articles.css */
+
+/* Layout adjustments */
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card styling */
+.card {
+    width: 300px; /* Adjust the width of the cards */
+    padding: 20px; /* Add space inside the card */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card image styling */
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Card body styling */
+.card-body h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Card actions */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: blue;
+    color: white;
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-success {
+    background-color: green;
+    color: white;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+.inline-form {
+    display: inline-block;
+}
+
+/* Placeholder for missing images */
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: #f5f5f5;
+    color: #aaa;
+    border-radius: 5px;
+}
