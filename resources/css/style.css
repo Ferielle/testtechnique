@@ -91,3 +91,51 @@
     color: #aaa;
     border-radius: 5px;
 }
+/* styles.css */
+
+/* Conteneur principal de l'article */
+.article-details {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond clair */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+/* Titre de l'article */
+.article-details h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Paragraphe de l'article */
+.article-details p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Mettre en évidence les labels (thème, date) */
+.article-details p strong {
+    color: #333;
+}
+
+/* Style pour l'image de l'article */
+.article-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.article-image img {
+    border-radius: 8px; /* Coins arrondis pour l'image */
+    border: 2px solid #ddd; /* Bordure autour de l'image */
+}
+
+/* Message si aucune image */
+.article-details p:last-child {
+    color: #888; /* Texte moins accentué pour "Aucune image" */
+    font-style: italic;
+}

@@ -1,47 +1,31 @@
-<header>
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!-- resources/views/layouts/app.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Default Title')</title> <!-- Default title if not set -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Your header content, such as navigation links -->
+        <nav>
+            <ul>
+                <!-- More links as needed -->
+            </ul>
+        </nav>
+    </header>
 
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <main>
+        @yield('content') <!-- This is where content from other views will be inserted -->
+    </main>
 
-</header>
-@section('title', 'Top 20 Articles of 2023')
+    <footer>
+        <!-- Your footer content -->
+        <p>&copy; 2024 Your Company</p>
+    </footer>
 
-@section('content')
-<div class="wrapper">
-    <h1 class="main-title">Top 20 articles of 2023</h1>
-    <a href="{{ route('articles.create') }}" class="btn btn-primary">Ajouter un article</a>
-
-    <div class="articles-container">
-        @foreach ($articles as $article)
-        <div class="card">
-            <!-- Image -->
-            <div class="card-image">
-                @if($article->image)
-                <img src="{{ asset('storage/' . $article->image) }}" alt="Image de l'article">
-                @else
-                <div class="placeholder">Aucune image</div>
-                @endif
-            </div>
-
-            <!-- Body -->
-            <div class="card-body">
-                <h2>{{ $article->title }}</h2>
-                <p>{{ $article->description }}</p>
-                <span class="published">Publié le {{ $article->date }}</span>
-            </div>
-
-            <!-- Actions -->
-            <div class="card-actions">
-                <a href="{{ route('articles.show', $article->id) }}" class="btn btn-link">Voir les détails</a>
-                <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-success">Modifier</a>
-                <form action="{{ route('articles.destroy', $article->id) }}" method="POST" class="inline-form">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</button>
-                </form>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
-@endsection
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>

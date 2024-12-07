@@ -20,11 +20,11 @@
         </br>
 </br>
 <!-- Bouton bleu qui se transforme en vert au clic -->
-<button id="createArticleButton"
-        class="button-3"
-        style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-    Ajouter un article
-</button>    </div>
+<a href="{{ route('articles.create') }}" class="custom-btn">
+    <i class="bi bi-plus-circle"></i> Ajouter un article
+</a>
+
+</div>
     </br>
     </br>
     <main>

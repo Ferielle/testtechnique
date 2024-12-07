@@ -1,7 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.custom-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Bleu */
+    border: none;
+    border-radius: 5px; /* Bordures arrondies */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
 
+.custom-btn:hover {
+    background-color: #0056b3; /* Couleur bleu foncé au survol */
+}
 body {
     margin: 0;
     padding: 0;

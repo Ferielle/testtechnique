@@ -14,6 +14,7 @@ class ArticleApiController extends Controller
         return response()->json(Article::all());
     }
 
+
     // Récupérer un article spécifique
     public function show($id)
     {
@@ -24,20 +25,26 @@ class ArticleApiController extends Controller
         return response()->json($article);
     }
 
+
     // Créer un nouvel article
     public function store(Request $request)
     {
         $validated = $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
-            'image' => 'nullable',
+            'image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
             'idTheme' => 'required|integer',
             'date' => 'required|date'
         ]);
+        if ($request->hasFile('image')) {
+            // Save the image to 'public/images' and store the path
+            $validated['image'] = $request->file('image')->store('images', 'public');
+        }
 
         $article = Article::create($validated);
         return response()->json($article, 201);
     }
+
 
     // Mettre à jour un article
     public function update(Request $request, $id)
@@ -50,14 +57,19 @@ class ArticleApiController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
-            'image' => 'nullable',
+            'image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
             'idTheme' => 'required|integer',
             'date' => 'required|date'
         ]);
+        if ($request->hasFile('image')) {
+            // Save the image to 'public/images' and store the path
+            $validated['image'] = $request->file('image')->store('images', 'public');
+        }
 
         $article->update($validated);
         return response()->json($article);
     }
+
 
     // Supprimer un article
     public function destroy($id)
